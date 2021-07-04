@@ -61,7 +61,7 @@ function addEmployee() {
                 teamEngineer();
             } else if (response.employeeList === 'Intern') {
                 teamIntern();
-            } else (response.employeeList === 'No, my team is complete!') 
+            } else if (response.employeeList === 'No, my team is complete!') 
                 employeeHTML();
             
         })
@@ -125,7 +125,7 @@ function teamIntern() {
     ])
         .then((answer) => {
             const internInput = new Intern(answer.internName, answer.internID, answer.internEmail, answer.nternSchool);
-            employees.push(engineerInput);
+            employees.push(internInput);
             console.log(internInput);
             addEmployee();
         })
