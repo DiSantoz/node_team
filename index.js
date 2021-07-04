@@ -41,20 +41,30 @@ function teamManager() {
             const managerInput = new Manager(answer.managerName, answer.managerID, answer.managerEmail, answer.managerNumber);
             employees.push(managerInput);
             console.log(managerInput);
-    })
+            addEmployee();
+        })
 }
 
 // add additional employees to the team
 function addEmployee() {
     inquirer.prompt([
-    {
-        type: 'list',
-        name: 'employeeList',
-        message: 'Would you like to add team members ?',
-        choices: ['Engineer', 'Intern', 'No, my team is complete!']
-    }
-
+        {
+            type: 'list',
+            name: 'employeeList',
+            message: 'Would you like to add team members ?',
+            choices: ['Engineer', 'Intern', 'No, my team is complete!']
+        }
     ])
+        .then((response) => {
+            console.log(response.employeeList);
+            if (response.employeeList === 'Engineer') {
+                teamEngineer();
+            } else if (response.employeeList === 'Intern') {
+                teamIntern();
+            } else (response.employeeList === 'No, my team is complete!') 
+                employeeHTML();
+            
+        })
 }
 
 // Engineer questions
@@ -82,11 +92,11 @@ function teamEngineer() {
         },
     ])
         .then((answer) => {
-            const engineerInput = new Engineer (answer.engineerName, answer.engineerID, answer.engineerEmail, answer.engineerGithub);
+            const engineerInput = new Engineer(answer.engineerName, answer.engineerID, answer.engineerEmail, answer.engineerGithub);
             employees.push(engineerInput);
-            console.log(engineerInput); 
+            console.log(engineerInput);
             addEmployee();
-    })
+        })
 }
 
 // Intern questions
@@ -114,11 +124,11 @@ function teamIntern() {
         },
     ])
         .then((answer) => {
-            const internInput = new Intern (answer.internName, answer.internID, answer.internEmail, answer.nternSchool);
+            const internInput = new Intern(answer.internName, answer.internID, answer.internEmail, answer.nternSchool);
             employees.push(engineerInput);
-            console.log(internInput); 
+            console.log(internInput);
             addEmployee();
-    })
+        })
 }
 
 // render HTML based on user inputs for employees
