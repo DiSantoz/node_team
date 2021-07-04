@@ -44,4 +44,90 @@ function teamManager() {
     })
 }
 
+// add additional employees to the team
+function addEmployee() {
+    inquirer.prompt([
+    {
+        type: 'list',
+        name: 'employeeList',
+        message: 'Would you like to add team members ?',
+        choices: ['Engineer', 'Intern', 'No, my team is complete!']
+    }
+
+    ])
+}
+
+// Engineer questions
+function teamEngineer() {
+    inquirer.prompt([
+        {
+            type: 'input',
+            name: 'engineerName',
+            message: 'What is the name of your engineer?'
+        },
+        {
+            type: 'input',
+            name: 'engineerID',
+            message: "What is your engineer's ID number ?"
+        },
+        {
+            type: 'input',
+            name: 'engineerEmail',
+            message: "What is your engineer's email address ?"
+        },
+        {
+            type: 'input',
+            name: 'engineerGithub',
+            message: "What is your engineer's GitHub username ?"
+        },
+    ])
+        .then((answer) => {
+            const engineerInput = new Engineer (answer.engineerName, answer.engineerID, answer.engineerEmail, answer.engineerGithub);
+            employees.push(engineerInput);
+            console.log(engineerInput); 
+            addEmployee();
+    })
+}
+
+// Intern questions
+function teamIntern() {
+    inquirer.prompt([
+        {
+            type: 'input',
+            name: 'internName',
+            message: 'What is the name of your intern ?'
+        },
+        {
+            type: 'input',
+            name: 'internID',
+            message: "What is your intern's ID number ?"
+        },
+        {
+            type: 'input',
+            name: 'internEmail',
+            message: "What is your intern's email address ?"
+        },
+        {
+            type: 'input',
+            name: 'internSchool',
+            message: "What school does your intern attend ?"
+        },
+    ])
+        .then((answer) => {
+            const internInput = new Intern (answer.internName, answer.internID, answer.internEmail, answer.nternSchool);
+            employees.push(engineerInput);
+            console.log(internInput); 
+            addEmployee();
+    })
+}
+
+// render HTML based on user inputs for employees
+function employeeHTML() {
+    if (!fs.existsSync(OUTPUT_DIR)) {
+        fs.mkdirSync(OUTPUT_DIR);
+    }
+    fs.writeFileSync(outputPath, render(employees), 'utf8');
+};
+
+// run teamManager
 teamManager();
