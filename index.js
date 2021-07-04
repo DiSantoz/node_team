@@ -144,7 +144,8 @@ function employeeHTML() {
     if (!fs.existsSync(OUTPUT_DIR)) {
         fs.mkdirSync(OUTPUT_DIR);
     }
-    fs.writeFileSync(outputPath, render(employees), 'utf8');
+    fs.writeFileSync(outputPath, render(employees), 'utf8')
+    console.log("Your Website is complete and ready to be viewed!");
 };
 
 // run teamManager
