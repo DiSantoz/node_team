@@ -40,7 +40,6 @@ function teamManager() {
         .then((answer) => {
             const managerInput = new Manager(answer.managerName, answer.managerID, answer.managerEmail, answer.managerNumber);
             employees.push(managerInput);
-            console.log(managerInput);
             addEmployee();
         })
 }
@@ -55,6 +54,7 @@ function addEmployee() {
             choices: ['Engineer', 'Intern', 'No, my team is complete!']
         }
     ])
+    // conditional statement that checks which choice user selects, runs corresponding function
         .then((response) => {
             console.log(response.employeeList);
             if (response.employeeList === 'Engineer') {
@@ -69,6 +69,11 @@ function addEmployee() {
 
 // Engineer questions
 function teamEngineer() {
+    console.log(`
+    ==================
+    Add a New Engineer
+    ==================
+    `);
     inquirer.prompt([
         {
             type: 'input',
@@ -94,13 +99,17 @@ function teamEngineer() {
         .then((answer) => {
             const engineerInput = new Engineer(answer.engineerName, answer.engineerID, answer.engineerEmail, answer.engineerGithub);
             employees.push(engineerInput);
-            console.log(engineerInput);
             addEmployee();
         })
 }
 
 // Intern questions
 function teamIntern() {
+    console.log(`
+    =================
+    Add a New Intern
+    =================
+    `);
     inquirer.prompt([
         {
             type: 'input',
@@ -124,9 +133,8 @@ function teamIntern() {
         },
     ])
         .then((answer) => {
-            const internInput = new Intern(answer.internName, answer.internID, answer.internEmail, answer.nternSchool);
+            const internInput = new Intern(answer.internName, answer.internID, answer.internEmail, answer.internSchool);
             employees.push(internInput);
-            console.log(internInput);
             addEmployee();
         })
 }
