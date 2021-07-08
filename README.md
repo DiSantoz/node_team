@@ -68,7 +68,7 @@
 
   ## Questions
   
-  Hi my name is [DiSantoz](https://github.com/DiSantoz) the developer behind nodeMe !
+  Hi my name is [DiSantoz](https://github.com/DiSantoz) the developer behind node_team !
 
   
   If you have any questions about the usage of this project or any suggestions on how to better this project please feel free to contact me at:
