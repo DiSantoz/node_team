@@ -41,17 +41,20 @@
   Please see attached [video](https://drive.google.com/file/d/1L59mA0YRb5yH7BKAjXjd4N5TRsg_rrNu/view?usp=sharing) on how to use this application!
 
   ![alt](./assets/images/nodeteam.gif)
-
-  ## License
-  Read more about the license here:
-  
-  https://choosealicense.com/licenses/mpl-2.0
   
   ## Technologies Used
   
   * Node
   * NPM Inquirer
   * NPM Jest
+
+
+  ## License
+  Read more about the license here:
+  
+  https://choosealicense.com/licenses/mpl-2.0
+  
+
   
   ## Credits
   
