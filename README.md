@@ -7,6 +7,7 @@
   ## Table of Contents
   * [Installation](#installation)
   * [Usage](#usage)
+  * [Technologies Used](#technologies-used)
   * [License](#license)
   * [Credits](#credits)
   * [Tests](#tests)
@@ -46,7 +47,11 @@
   
   https://choosealicense.com/licenses/mpl-2.0
   
+  ## Technologies Used
   
+  * Node
+  * NPM Inquirer
+  * NPM Jest
   
   ## Credits
   
