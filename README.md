@@ -38,7 +38,7 @@
 
   ## Usage
 
-  Please see attached [video](https://drive.google.com/file/d/1L59mA0YRb5yH7BKAjXjd4N5TRsg_rrNu/view?usp=sharing) on how to use this application!
+  Please see attached [video](https://drive.google.com/file/d/1puUh6Ah5QiP625t1Hl2naUgDIAVHnPWC/view?usp=sharing) on how to use this application!
 
   ![alt](./assets/images/nodeteam.gif)
   
